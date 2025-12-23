@@ -12,54 +12,56 @@ typedef struct Car
 	char gamerID[ID_LEN];	// 소유자 ID
 	int fuelGauge;			// 연료량
 	int curSpeed;			// 현재속도
+
+	void ShowCarState()
+	{
+		cout << "소유자ID : " << gamerID << endl;
+		cout << "연료량 : " << fuelGauge << "%" << endl;
+		cout << "현재속도 : " << curSpeed << "km/s" << endl << endl;
+	}
+
+	void Accel()
+	{
+		if (fuelGauge <= 0)
+			return;
+		else
+			fuelGauge -= ACC_STEP;
+
+		if (curSpeed + ACC_STEP >= MAX_SPD)
+		{
+			curSpeed = MAX_SPD;
+			return;
+		}
+
+		curSpeed += ACC_STEP;
+	}
+
+	void Break()
+	{
+		if (curSpeed < BRK_STEP)
+		{
+			curSpeed = 0;
+			return;
+		}
+
+		curSpeed -= BRK_STEP;
+	}
+
 } Car;
-
-void ShowCarState(const Car& car)
-{
-	cout << "소유자ID : " << car.gamerID << endl;
-	cout << "연료량 : " << car.fuelGauge << "%" << endl;
-	cout << "현재속도 : " << car.curSpeed << "km/s" << endl << endl;
-}
-
-void Accel(Car& car) {
-	if (car.fuelGauge <= 0)
-		return;
-	else
-		car.fuelGauge -= ACC_STEP;
-
-	if (car.curSpeed + ACC_STEP >= MAX_SPD)
-	{
-		car.curSpeed = MAX_SPD;
-		return;
-	}
-
-	car.curSpeed += ACC_STEP;
-}
-
-void Break(Car& car)
-{
-	if (car.curSpeed < BRK_STEP)
-	{
-		car.curSpeed = 0;
-		return;
-	}
-
-	car.curSpeed -= BRK_STEP;
-}
 
 int main()
 {
-	Car myTesla = { "MODEL Y", 100, 40 };
-	Accel(myTesla);
-	ShowCarState(myTesla);
-	Break(myTesla);
-	ShowCarState(myTesla);
+	Car myCar = { "MODEL Y", 100, 40 };
+	myCar.Accel();
+	myCar.ShowCarState();
+	myCar.Break();
+	myCar.ShowCarState();
 
-	Car yourTesla = { "MODEL X", 100, 50 };
-	Accel(yourTesla);
-	ShowCarState(yourTesla);
-	Break(yourTesla);
-	ShowCarState(yourTesla);
+	Car yourCar = { "MODEL X", 100, 50 };
+	yourCar.Accel();
+	yourCar.ShowCarState();
+	yourCar.Break();
+	yourCar.ShowCarState();
 
 	return 0;
 }
