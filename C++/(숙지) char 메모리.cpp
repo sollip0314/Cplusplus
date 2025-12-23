@@ -4,7 +4,7 @@ int main()
 {
 	char name[6];
 
-	std::cout << "ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : zz";
+	std::cout << "ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” :  ";
 	std::cin >> name;
 
 	std::cout << name << std::endl;
