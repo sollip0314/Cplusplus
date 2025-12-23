@@ -4,7 +4,7 @@ int main()
 {
 	char name[6];
 
-	std::cout << "이름을 입력하세요 :  ";
+	std::cout << "이름을 입력하세요 nesw :  ";
 	std::cin >> name;
 
 	std::cout << name << std::endl;
