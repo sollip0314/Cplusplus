@@ -192,6 +192,9 @@
     <ClCompile Include="03-07_Carinline.h">
       <Filter>헤더 파일</Filter>
     </ClCompile>
+    <ClCompile Include="03-08_클래스_사과장수와사과구매자.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="03-06_Car.h">
