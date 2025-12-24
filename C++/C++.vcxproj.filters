@@ -201,7 +201,7 @@
     <ClCompile Include="Quiz_03-02_클래스 계산기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Quiz_03-03_클래스.cpp">
+    <ClCompile Include="Quiz_03-03_클래스_Printer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="04-01.cpp">
