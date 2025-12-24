@@ -15,8 +15,8 @@ namespace CAR_CONST
 }
 
 
-// (암기) private의 변수들은 public의 함수들을 통해서만 접근이 가능하다.
-// (암기) 키워드 class를 이용해서 정의한 클래스에 선언된 변수와 함수에 별도의 접근제어 지시자를 선언하지 않으면, 모든 변수와 함수는 private으로 선언된다.
+// ★(암기) private의 변수들은 public의 함수들을 통해서만 접근이 가능하다.
+// ★(암기) 클래스는 별도의 접근제어 지시자를 선언하지 않으면 모든 변수와 함수를 private로 간주한다.   (참고 : struct는 기본적으로 멤버가 public으로 선언되지만, private 키워드를 명시적으로 사용하면 해당 멤버는 구조체 외부에서 직접 접근할 수 없게 됩니다. )
 class Car
 {
 private:
@@ -30,7 +30,7 @@ public:
 	void Break();
 };
 
-// (암기) 함수의 정의를 클래스 밖으로 빼도, 이는 클래스의 일부이기 때문에, 함수 내에서는 private으로 선언된 변수에 접근이 가능하다.
+// ★(암기) 함수의 정의를 클래스 밖으로 빼도, 이는 클래스의 일부이기 때문에, 함수 내에서는 private으로 선언된 변수에 접근이 가능하다.
 void Car::Initmembers(const char* ID, int fuel)
 {
 	strcpy_s(gamerID, sizeof(gamerID), ID);
